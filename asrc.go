@@ -27,9 +27,9 @@ import (
 type ASRCQuality int
 
 const (
-	ASRCFast      ASRCQuality = 0 // 16 taps
-	ASRCBalanced  ASRCQuality = 1 // 32 taps
-	ASRCHigh      ASRCQuality = 2 // 48 taps
+	ASRCFast       ASRCQuality = 0 // 16 taps
+	ASRCBalanced   ASRCQuality = 1 // 32 taps
+	ASRCHigh       ASRCQuality = 2 // 48 taps
 	ASRCAudiophile ASRCQuality = 3 // 64 taps
 )
 
@@ -44,8 +44,8 @@ type ASRCResampler struct {
 	filterTable []float64 // precomputed windowed sinc values
 
 	// Resampling state.
-	ratio     float64 // current resampling ratio (1.0 = unity)
-	phase     float64 // fractional phase accumulator
+	ratio     float64   // current resampling ratio (1.0 = unity)
+	phase     float64   // fractional phase accumulator
 	history   []float64 // circular input history buffer
 	histLen   int
 	histWrite int // write position in history
@@ -193,7 +193,7 @@ func (r *ASRCResampler) Process(input []float64) []float64 {
 				}
 
 				// Filter table lookup with sub-sample interpolation.
-				tableIdx := (tap + r.halfTaps) * r.oversample + filterOffset
+				tableIdx := (tap+r.halfTaps)*r.oversample + filterOffset
 				if tableIdx < 0 || tableIdx >= r.tableLen {
 					continue
 				}
