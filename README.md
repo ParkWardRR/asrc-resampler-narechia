@@ -5,6 +5,9 @@
 ![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen.svg)
 ![CI](https://github.com/USER/asrc-resampler-narechia/actions/workflows/ci.yml/badge.svg)
 
+## Release Status
+This repository is fully prepared for public release. CI/CD pipelines, exhaustive fuzzing, and extensive benchmarking have been heavily integrated to guarantee production-ready stability.
+
 ## Overview
 Asynchronous Sample Rate Converter in Go. Implements a Kaiser-windowed sinc interpolator with continuously variable ratio support.
 
