@@ -16,13 +16,7 @@ The Asynchronous Sample Rate Converter (ASRC) is built on a hybrid architecture,
 > **Design Philosophy**: This project is designed strictly for high-performance integrations and infrastructure codebases. It contains no redundant abstractions and focuses entirely on precise data processing via a zero-allocation pipeline.
 
 ## Architecture
-
-```mermaid
-graph LR;
-    A[Go Distributed Orchestrator / gRPC] -->|cgo FFI / DMA zero-copy| B[Rust Core (no_std, SIMD)];
-    B -->|Hardware Acceleration: GPU, ANE, AES-NI, eBPF| B
-    B -->|Zero-Copy Processing| C[Go Service (Output)];
-```
+ 
 
 ### Planned Advanced Hardware & OS Integrations (See Roadmap)
 While the core architecture is highly optimized, the following integrations are actively in development or exist as experimental stubs to push the boundaries of performance:
