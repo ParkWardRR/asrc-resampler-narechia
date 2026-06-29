@@ -16,6 +16,11 @@ use libm::{fabs, exp, sqrt, sin};
 
 pub mod ffi;
 pub mod simd;
+pub mod gpu;
+pub mod ane_tensor;
+pub mod crypto;
+pub mod ebpf;
+pub mod wasm;
 
 const PI: f64 = 3.14159265358979323846;
 
@@ -157,6 +162,17 @@ impl ASRCResampler {
         }
 
         out_idx / ch
+    }
+
+    #[cfg(feature = "wasm")]
+    pub fn process_standalone(&mut self, input: &[f64], ratio: f64) -> Vec<f64> {
+        self.set_ratio(ratio);
+        let output_frames = (input.len() / self.channels) as f64 / ratio;
+        let output_cap = (output_frames.ceil() as usize + 2) * self.channels;
+        let mut output = vec![0.0; output_cap];
+        let processed = self.process(input, &mut output);
+        output.truncate(processed * self.channels);
+        output
     }
 }
 

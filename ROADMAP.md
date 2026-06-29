@@ -10,10 +10,9 @@ This document outlines the strategic vision and engineering milestones for the `
 - [x] Established strict local CI testing pipelines via OrbStack + Act.
 - [x] v1.0.0 API Freeze for downstream consumers.
 
-## Phase 2: Extreme Performance & Hardware Acceleration (Rust) (Completed)
-**Focus:** Hardware acceleration, zero-copy pipelines, and advanced instruction sets.
+## Phase 2: Core Rust Rewrite & Zero-Copy Pipeline (Completed)
+**Focus:** Memory safety, `no_std` compliance, and zero-allocation architecture.
 
-- [x] **SIMD Optimization Expansion:** Offload compute-heavy paths to explicit NEON (ARM64) and AVX-512 (x86_64) intrinsic implementations.
 - [x] **`#![no_std]` Compliance:** Introduce a comprehensive `no_std` feature flag for bare-metal microcontroller execution.
 - [x] **Zero-Copy Pipeline Architecture:** Implement a unified zero-allocation pipeline to completely eliminate intermediate buffer allocations.
 
@@ -25,9 +24,10 @@ This document outlines the strategic vision and engineering milestones for the `
 - [x] **Cloud-Native Go Orchestrator:** Build reference distributed pipelines in Go that manage pools of worker nodes.
 - [x] **Cross-Language CI:** Expand testing to run Go-Rust integration tests and fuzzing across the FFI boundary.
 
-## Phase 4: Extreme Hardware Acceleration & Deep OS Integrations
+## Phase 4: Extreme Hardware Acceleration & Deep OS Integrations (Planned)
 **Focus:** Pushing the boundaries of performance utilizing GPUs, Neural Engines, and OS-bypass networking.
 
+- [ ] **SIMD Optimization Expansion:** Implement `process_frame_neon` and `process_frame_avx512` to offload scalar compute paths to explicit hardware intrinsics.
 - [ ] **GPU-Accelerated Resampling:** Integrate compute shaders (via `wgpu` or Vulkan) to offload large batch resampling operations directly to the GPU.
 - [ ] **Apple Neural Engine (ANE) & Tensor Core Offloading:** Implement predictive filter-tap calculations utilizing hardware AI accelerators for non-linear resampling tasks.
 - [ ] **Hardware-Accelerated I/O (DMA):** Leverage Direct Memory Access (DMA) to stream raw audio data directly to hardware resampling blocks, bypassing the OS kernel entirely for ultra-low latency.
@@ -35,7 +35,7 @@ This document outlines the strategic vision and engineering milestones for the `
 - [ ] **Distributed Execution via `tonic` (gRPC):** Develop a Go-orchestrated microservice scaffolding to scale horizontally across Kubernetes clusters, farming chunks out to Rust worker nodes.
 - [ ] **eBPF Tracing Hooks:** Embed USDT probes directly into the Rust core for advanced latency profiling in production environments without overhead.
 
-## Phase 5: Future-Proofing & System Integration
+## Phase 5: Future-Proofing & System Integration (Planned)
 **Focus:** Broadening the scope of the project beyond simple execution on generic CPUs.
 
 - [ ] **Hardware AES-NI Encryption:** Combine execution with AES-NI instructions to provide secure, encrypted streams for enterprise use cases with zero CPU overhead.

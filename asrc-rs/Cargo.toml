@@ -13,9 +13,26 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 [dependencies]
 libm = "0.2"
 
+# Phase 4/5 dependencies (optional via features)
+wgpu = { version = "0.19", optional = true }
+aes = { version = "0.8", optional = true }
+cipher = { version = "0.4", optional = true }
+aya = { version = "0.12", optional = true }
+tokio-uring = { version = "0.4", optional = true }
+wasm-bindgen = { version = "0.2", optional = true }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+coreml = { version = "0.1", optional = true } # hypothetical bridging crate
+
 [build-dependencies]
 cbindgen = "0.24"
 
 [features]
 default = ["std"]
 std = []
+gpu = ["wgpu", "std"]
+crypto = ["aes", "cipher"]
+ebpf = ["aya", "std"]
+io_uring = ["tokio-uring", "std"]
+wasm = ["wasm-bindgen"]
+ane = ["coreml", "std"]
