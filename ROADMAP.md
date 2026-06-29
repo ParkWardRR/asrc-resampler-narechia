@@ -1,40 +1,43 @@
 # ASRC Resampler Engineering Roadmap
 
-This document outlines the strategic vision and engineering milestones for the `asrc-resampler-narechia` project. Our objective is to deliver the most performant, secure, and robust implementation, prioritizing **Rust for high-performance core logic** and leveraging **Go for versatile cross-language tooling and systems integration**.
+This document outlines the strategic vision and engineering milestones for the `asrc-resampler-narechia` project. Our objective is to deliver the most performant, secure, and robust implementation, prioritizing **Rust for extreme high-performance core logic**, leveraging **massive hardware acceleration**, and utilizing **Go for versatile cross-language tooling and high-throughput orchestration**.
 
 ## Phase 1: Core Stabilization & Ergonomics (Completed)
-**Focus:** API stabilization, basic functionality, and comprehensive error handling.
+**Focus:** API stabilization, basic Go functionality, and comprehensive error handling.
 
-- [x] Implemented core algorithms and baseline validation.
+- [x] Implemented core Kaiser-windowed sinc interpolation algorithms.
 - [x] Integrated `fuzzing` targets and achieved robust boundary condition coverage.
 - [x] Established strict local CI testing pipelines via OrbStack + Act.
 - [x] v1.0.0 API Freeze for downstream consumers.
 
-## Phase 2: Extreme Performance & Portability (Rust) (Completed)
-**Focus:** Hardware acceleration, zero-copy pipelines, and embedded environments.
+## Phase 2: Extreme Performance & Hardware Acceleration (Rust) (Completed)
+**Focus:** Hardware acceleration, zero-copy pipelines, and advanced instruction sets.
 
 - [x] **SIMD Optimization Expansion:** Offload compute-heavy paths to explicit NEON (ARM64) and AVX-512 (x86_64) intrinsic implementations.
 - [x] **`#![no_std]` Compliance:** Introduce a comprehensive `no_std` feature flag for bare-metal microcontroller execution.
 - [x] **Zero-Copy Pipeline Architecture:** Implement a unified zero-allocation pipeline to completely eliminate intermediate buffer allocations.
 
 ## Phase 3: Go Integration & Multi-Language Bindings (Completed)
-**Focus:** Bringing highly optimized core logic to Go-based microservices and infrastructure.
+**Focus:** Bringing highly optimized Rust core logic to Go-based microservices and infrastructure.
 
 - [x] **Idiomatic Go Wrapper (`cgo` bindings):** Develop a safe, zero-allocation Go module bridging the Rust FFI boundary.
 - [x] **Go Interface Implementations:** Implement streaming interfaces seamlessly compatible with the Go standard library's I/O ecosystem.
 - [x] **Cloud-Native Go Orchestrator:** Build reference distributed pipelines in Go that manage pools of worker nodes.
 - [x] **Cross-Language CI:** Expand testing to run Go-Rust integration tests and fuzzing across the FFI boundary.
 
-## Phase 4: Advanced Rust Ecosystem Integrations
-**Focus:** Leveraging cutting-edge frameworks for high-throughput deployment.
+## Phase 4: Extreme Hardware Acceleration & Deep OS Integrations
+**Focus:** Pushing the boundaries of performance utilizing GPUs, Neural Engines, and OS-bypass networking.
 
+- [ ] **GPU-Accelerated Resampling:** Integrate compute shaders (via `wgpu` or Vulkan) to offload large batch resampling operations directly to the GPU.
+- [ ] **Apple Neural Engine (ANE) & Tensor Core Offloading:** Implement predictive filter-tap calculations utilizing hardware AI accelerators for non-linear resampling tasks.
+- [ ] **Hardware-Accelerated I/O (DMA):** Leverage Direct Memory Access (DMA) to stream raw audio data directly to hardware resampling blocks, bypassing the OS kernel entirely for ultra-low latency.
 - [ ] **`tokio-uring` / `io_uring` Support:** Exploit Linux's `io_uring` via async runtimes for zero-copy file and network I/O.
-- [ ] **Distributed Execution via `tonic` (gRPC):** Develop a microservice scaffolding to scale horizontally across Kubernetes clusters.
-- [ ] **eBPF Tracing Hooks:** Embed USDT probes directly into the core for advanced latency profiling in production environments without overhead.
+- [ ] **Distributed Execution via `tonic` (gRPC):** Develop a Go-orchestrated microservice scaffolding to scale horizontally across Kubernetes clusters, farming chunks out to Rust worker nodes.
+- [ ] **eBPF Tracing Hooks:** Embed USDT probes directly into the Rust core for advanced latency profiling in production environments without overhead.
 
 ## Phase 5: Future-Proofing & System Integration
-**Focus:** Broadening the scope of the project beyond simple execution.
+**Focus:** Broadening the scope of the project beyond simple execution on generic CPUs.
 
-- [ ] **Hardware-Accelerated Security:** Combine execution with encryption to provide secure streams for enterprise use cases.
-- [ ] **WebAssembly (WASM) Module:** Ensure compilation to `wasm32-unknown-unknown` with web-workers support.
-- [ ] **Custom Hardware DSP Targets:** Explore compilation and deployment patterns for specialized Digital Signal Processors.
+- [ ] **Hardware AES-NI Encryption:** Combine execution with AES-NI instructions to provide secure, encrypted streams for enterprise use cases with zero CPU overhead.
+- [ ] **WebAssembly (WASM) Module:** Ensure compilation to `wasm32-unknown-unknown` with web-workers and WebGPU support for in-browser hardware acceleration.
+- [ ] **Custom Hardware DSP Targets:** Explore compilation and deployment patterns for specialized Digital Signal Processors and FPGAs.
