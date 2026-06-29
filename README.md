@@ -6,7 +6,7 @@
 ![CI](https://img.shields.io/badge/CI-Passing-brightgreen.svg)
 ![Platform](https://img.shields.io/badge/Platform-macOS_%7C_Linux-lightgrey.svg)
 > [!NOTE]
-> Tested extensively with exhaustive fuzzing, rigorous benchmarking, and comprehensive CI/CD pipelines to guarantee stability in mission-critical environments.
+> Tested extensively with exhaustive fuzzing, rigorous benchmarking, and comprehensive CI/CD pipelines  
 
 ## Overview
 
