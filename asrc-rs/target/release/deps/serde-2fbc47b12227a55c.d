@@ -1,0 +1,14 @@
+/Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/deps/serde-2fbc47b12227a55c.d: /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/build/serde-eca54499262bd750/out/private.rs
+
+/Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/deps/libserde-2fbc47b12227a55c.rlib: /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/build/serde-eca54499262bd750/out/private.rs
+
+/Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/deps/libserde-2fbc47b12227a55c.rmeta: /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/build/serde-eca54499262bd750/out/private.rs
+
+/Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/twesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/build/serde-eca54499262bd750/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/twesh/Antigravity/spinoffs/asrc-resampler-narechia/asrc-rs/target/release/build/serde-eca54499262bd750/out

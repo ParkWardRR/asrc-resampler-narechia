@@ -1,0 +1,21 @@
+[package]
+name = "asrc-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Antigravity"]
+description = "A high-performance, no_std compliant, SIMD-accelerated ASRC core"
+build = "build.rs"
+
+[lib]
+name = "asrc"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+libm = "0.2"
+
+[build-dependencies]
+cbindgen = "0.24"
+
+[features]
+default = ["std"]
+std = []

@@ -8,23 +8,23 @@
 This repository is fully prepared for public release. CI/CD pipelines, exhaustive fuzzing, and extensive benchmarking have been heavily integrated to guarantee production-ready stability.
 
 ## Overview
-Asynchronous Sample Rate Converter in Go. Implements a Kaiser-windowed sinc interpolator with continuously variable ratio support.
+Asynchronous Sample Rate Converter with a high-performance **Rust core** and idiomatic **Go bindings (`cgo`)**. Implements a Kaiser-windowed sinc interpolator with continuously variable ratio support.
 
-Designed strictly for high-performance integrations and infrastructure codebases. No redundant abstractions; focuses entirely on precise data processing.
+Designed strictly for high-performance integrations and infrastructure codebases. No redundant abstractions; focuses entirely on precise data processing with hardware-accelerated SIMD intrinsics (NEON, AVX-512) and zero-allocation pipelines.
 
 ## Architecture
 
 ```mermaid
 graph LR;
-    A[44.1kHz] --> B[Polyphase Filter Bank];
-    B --> C[48.0kHz];
-
+    A[Go Service (Input)] -->|cgo FFI| B[Rust Core (no_std, SIMD)];
+    B -->|Zero-Copy Processing| C[Go Service (Output)];
 ```
 
 ## Requirements
-- **Go**: Latest stable toolchain.
+- **Go**: 1.20 or later.
+- **Rust**: Latest stable toolchain (for building the core library).
+- **C Compiler**: Required by `cgo`.
 - **OS Support**: Cross-platform (macOS/Linux prioritized).
-- **Dependencies**: Minimal to none (strictly constrained to standard library where mathematically possible).
 
 ## Quick Tutorial
 
@@ -37,10 +37,10 @@ Integration is straightforward. Consult the module source for exact API signatur
 ```
 ## Testing, Fuzzing, and Benchmarking
 
-To run the test suite and benchmarks:
+To build the Rust library and run the Go test suite:
 ```bash
-go test -v ./...
-go test -bench .
+make test
+make fuzz
 ```
 
 To run the fuzzer:
